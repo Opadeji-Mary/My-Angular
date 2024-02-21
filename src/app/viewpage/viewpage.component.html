@@ -1,0 +1,29 @@
+<p>viewpage works!</p>
+
+<button></button>
+<table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>firstname</th>
+        <th>Lastname</th>
+        <th>email</th>
+        <th>PhoneNo</th>
+        <th>Address</th>
+        <th>Gender</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of contactarray">
+        <td>{{ item.firstname }}</td>
+        <td>{{ item.Lastname }}</td>
+        <td>{{ item.PhoneNo }}</td>
+        <td>{{ item.Email }}</td>
+        <td>{{ item.Address }}</td>
+        <td>{{ item.Gender }}</td>
+      </tr>
+    </tbody>
+  </table>
+  
+
+

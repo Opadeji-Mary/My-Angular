@@ -1,0 +1,33 @@
+<p>landingpagetwo works!</p>
+<a routerLink="" class="nav nav-link">Home|</a>
+<a routerLink="/dashboard" class="nav nav-link">Dashboard|</a>
+<a routerLink="/view" class="nav nav-link"></a>
+<!-- <input placeholder="first name" type="text"class="{{styles}}" [(ngModel)]="first_name"> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-6-shadow">
+            <div class="text-center">
+                <h6 class="text-info">Add Up</h6>
+            </div>
+            <input placeholder="firstname" type="text" class="{{styles}}" [(ngModel)]="first_name">
+            <input placeholder="lastname" type="text" class="{{styles}}" [(ngModel)]="last_name">
+            <input placeholder="EmaIl" type="text" class="{{styles}}" [(ngModel)]="email">
+            <input placeholder="phone number" type="text" class="{{styles}}" [(ngModel)]="phoneNo">
+            <input placeholder="addres" type="text" class="{{styles}}" [(ngModel)]="address">
+            <input placeholder="gender" type="text" class="{{styles}}" [(ngModel)]="gender">
+            <button class="btn btn-success" (click)="addContact()">Add</button>
+        </div>
+    </div>
+    <div *ngFor="let item of this.contactarray, let i =index, ">
+        <p>{{item.firstname}}</p>
+        <button class="btn btn-info" routerLink="/dashboard/{{i}}">view
+            <!-- <div [ngSwitch]="" >{{this.contactarray}}
+                <p>{{this.first_name}}</p>
+                </div> -->
+        </button>
+        
+        <button class="btn btn-danger" >delete</button> 
+        <button class="btn btn-success" >edit</button>  
+    </div>
+</div>

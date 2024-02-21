@@ -1,0 +1,23 @@
+<p>reactiveform works!</p>
+<div class="col-5 mx-auto shadow">
+    <h1>Reactive form</h1>
+    <div class="row">
+        <div class="p-2">
+            <form>
+                <input type="text" class="form-control" placeholder="firstname" formControlName="firstname" 
+                [class.is-valid]="formone.get('firstname')?.valid && formone.get('firstname')?.dirty" [class.is-valid]="formone.get('firstname')?.invalid && formone.get('firstname')?.dirty">
+                <div *ngIf="formone.get('firstname')?.dirty" untouched>
+                    <span class="text-danger" *ngIf="formone.get('firstname')?.errors?.['required']">
+                    This field must not br empty
+                    </span>
+                </div>
+                <input type="text" class="form-control" placeholder="email" formControlName="email" 
+                [class.is-valid]="formone.get('email')?.valid && formone.get('email')?.dirty" [class.is-valid]="formone.get('email')?.invalid && formone.get('email')?.dirty">
+                <div *ngIf="formone.get('email')?.dirty" untouched>
+                <span *ngIf="formone.get('email')?.errors?.['required']"></span></div>
+                <input type="text" class="form-control" placeholder="password" formControlName="password">
+                <button class="btn btn-success w-100" >Submit</button>
+            </form>
+        </div>
+    </div>
+</div>

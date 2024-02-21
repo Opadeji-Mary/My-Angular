@@ -1,0 +1,19 @@
+<p>templatedrivenform works!</p>
+
+<div class="container">
+    <div class="col-6 mx-auto">
+        <div class="p-3">
+            <input class="form-control my-2" placeholder=""  name="FirstName" [(ngModel)]="FirstName"
+            #Fname="ngModel" required [class.is-valid]="Fname.valid && Fname.dirty" [class.is-valid]="Fname.invalid && Fname.dirty" minlentgtht="5">
+            <!-- {{dirty, touched, untouched, pristine}} -->
+            <!-- {{Fname.valid}} -->
+            <div *ngIf="Fname.invalid && Fname.touched">
+                 <span class="text-center text-danger" *ngIf="Fname?.errors?.['required']">This field required</span>
+                <span class="text-center text-danger" *ngIf="Fname?.errors?.['minlength']">the minimum length is five</span>
+            </div>
+            <input class="form-control my-2" placeholder="" name="LastName" [(ngModel)]="LastName"
+            #Lname="ngModel" required [class.is-valid]="Lname.valid && Lname.dirty" [class.is-valid]="Lname.invalid && Lname.dirty" minlength="5">
+             <button class="btn btn-success">Submit</button> 
+        </div>
+    </div>
+</div>
